@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: darkgray;
+    font-family: 'Manjari', sans-serif;
+}
+
+/* HEADER */
+
+.title h1 {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2.9em;
+    text-transform: uppercase;
+}
+
+.container{
+    background: white;
+    width: 90%;
+    max-width: 1000px;
+    margin: 1.6em auto;
+
+    display: grid;
+    gap: 1.6em;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.container > .header,
+.container > .content,
+.container > .siderbar,
+.container > footer,
+.container > div {
+    background: white;
+    padding: 20px;
+    border: solid black;
+}
+
+.container .header,
+.container footer{
+    grid-column: 1/6;
+    background: grey;
+    color: white;
+}
+
+.container > .content {
+    grid-column: span 3;
+}
+
+.content > .article{
+    background: purple;
+    padding: 20px;
+    margin-top: 5px;
+}
+
+.content .article h1,
+.content .article p{
+    padding: 10px;
+}
+
+
+.container > .sidebar {
+    grid-column: span 2;
+    background: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container .siderbar {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.container > .Revy {
+    background: grey;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.container > .Revy:hover {
+    cursor: pointer;
+    background: white;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        text-align: center;
+    }
+        
+    .container .content{
+        grid-column: 1/-1;
+    }
+
+    .container .sidebar{
+        grid-column: 1/6;
+    }
+
+    .container .Revy{
+        grid-column: 1/-1;
+    }
+}
